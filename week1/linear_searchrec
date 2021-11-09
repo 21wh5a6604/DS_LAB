@@ -1,0 +1,32 @@
+ 1 #include<stdio.h>
+  2 int linear_search(int arr[],int size, int index, int ele){
+  3     if(index<size){
+  4         if (arr[index]==ele){
+  5             return index+1;
+  6         }
+  7         else{
+  8             return linear_search(arr, size, index+1, ele);
+  9         }
+ 10     }
+ 11     return-1;
+ 12 }
+ 13 int main(){
+ 14     int size, ele, pos,index=0;
+ 15     int arr[size];
+ 16     printf("enter number of elements:");
+ 17     scanf("%d",&size);
+ 18     for(int i=0; i<size; i++){
+ 19         scanf("%d",&arr[i]);
+ 20                 }
+ 21     printf("elements to be searched:");
+ 22     scanf("%d",&ele);
+ 23     pos=linear_search(arr, size,ele);
+ 23     pos=linear_search(arr, size,ele);
+ 24     if(pos==-1){
+ 25         printf("element is not found\n");
+ 26     }
+ 27     else{
+ 28         printf("element found at%d:\n",pos);
+ 29     }
+ 30 }
+ 31 
