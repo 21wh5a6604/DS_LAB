@@ -1,0 +1,105 @@
+ #include<stdio.h>
+ #include<stdlib.h>
+   struct node
+   {   
+       int data;
+       struct node*link;
+   };
+   struct node*head=NULL,*cur,*temp,*temp1;
+   struct node*create(){
+      int n;
+      printf("enter number of elements");
+      scanf("%d",&n);
+  
+   while(n--){
+      cur=(struct node*)malloc(sizeof(struct node));
+      scanf("%d",&cur->data);
+      cur->link=NULL;
+      if(head==NULL){
+          head=cur;
+          }
+      else{
+          temp=head;
+          while(temp->link!=NULL)
+          {
+          temp=temp->link;
+          }
+          temp->link=cur;
+  
+  }
+  }
+  return head;
+  }
+ 33 void display(struct node*head)
+ 34   {
+ 35       temp=head;
+ 36       while(temp!=NULL)
+ 37       {
+ 37       {
+ 38           printf("%d->",temp->data);
+ 39           temp = temp->link;
+ 40     }
+ 41 }
+ 42 
+ 43 struct node*insert_begin(int ele)
+ 44 {   
+ 45     cur=(struct node*)malloc(sizeof(struct node));
+ 46     cur->data=ele;
+ 47     cur->link=head;
+ 48     head=cur;
+ 49 return head;
+ 50 }
+ 51 struct node*inser_end(int ele)
+ 52 {
+ 53     cur=(struct node*)malloc(sizeof(struct node));
+ 54     cur->data=ele;
+ 55     cur->link=NULL;
+ 56     temp=head;
+ 57     while(temp!=NULL){
+ 58         temp=temp->link;
+ 59         temp->link=cur;
+ 60 }
+ 61     return head;
+ 62 }
+ 63 struct node*insert_pos(int pos,int ele)
+ 64 {
+ 65     int c = 1;
+ 66     cur=(struct node*)malloc(sizeof(struct node));
+ 67     cur->data=ele;
+ 68     temp=head;
+ 69     while( c < pos-1)
+ 70     {
+ 71         temp=temp->link;
+ 72         c++;
+ 73     }
+   73     }
+ 74     cur->link=temp->link;
+ 75     temp->link=cur;
+ 76 return head;
+ 77 }
+ 78 
+ 79 struct node*delete_begin()
+ 80 {
+ 81     temp=head;
+ 82     head=temp->link;
+ 83     printf("deleted element is %d",temp->data);
+ 84     free(temp);
+ 85   return head;
+ 86 }
+ 87 
+ 88 
+ 89 
+ 90 
+ 91 int main()
+ 92 {
+ 93     int ele;
+ 94     head=create();
+ 95     display (head);
+ 96 
+  }
+  
+  
+                                                                                                                                                                       73,1-4        58%
+
+                                                                                                                           1,1           Top
+
