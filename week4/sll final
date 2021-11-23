@@ -146,21 +146,7 @@ struct node* sorting(struct node *head){
 
     return head;
 }    
-    /*while(temp != NULL){
-        temp1 = NULL;
-
-
-        while(temp1 != NULL){
-            if(temp1 ->data  >  temp1->link->data){
-                x = temp1->data;
-                temp1->data  =  temp1->link->data;
-                temp1->link->data  =  x;
-            }
-            temp1=temp1->link;
-        }
-        temp = temp->link;
-    }*/
-
+   
 
 int main(){
     struct node * head;    
