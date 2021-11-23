@@ -212,3 +212,84 @@ int main(){
        }
    }             
 }
+
+
+
+
+output:
+#create
+1-create()
+ 2-insert at begin
+ 3-insert at end
+ 4- insert at pos
+ 5-display 
+ 6-delete at begin 
+ 7-delete at end 
+ 8-delete at pos 
+ 9-reverse display
+ 10-search
+ 11-sort
+ 12-exit 
+enter your choise
+1
+Enter the total number of nodes
+4
+enter the value to be inserted in the node
+2
+enter the value to be inserted in the node
+3
+enter the value to be inserted in the node
+4
+enter the value to be inserted in the node
+5
+#display
+enter your choise
+5
+2 -> 3 -> 4 -> 5
+#insert at begin
+enter your choise
+2
+enter the value to be inserted
+4
+4 -> 2 -> 3 -> 4 -> 5
+
+#insert at end
+enter your choise
+3
+enter the value to be inserted
+9
+
+4 -> 2 -> 3 -> 4 -> 5 -> 9
+
+#insert at position
+enter your choise
+4
+enter the value and position
+ 3
+3   
+4 -> 2 -> 3 -> 3 -> 4 -> 5 -> 9
+
+#delete at begin
+deleted element is:4
+2 -> 3 -> 3 -> 4 -> 5 -> 9
+
+#delete at end
+deleted element is:9
+#delete at position
+enter your choise
+8
+enter the position
+2
+deleted element 3
+2 -> 3 -> 4 -> 5
+
+#reverse display
+5 4 3 2 
+#search
+enter the key value to be searched
+2
+element found at 1 
+
+#sort
+2 -> 3 -> 4 -> 5
+#exit
