@@ -9,3 +9,9 @@ def is_disarium(n: int)->bool:
     a=a.append(p)
     return sum(a)==n
 ------------------------------------
+def reverse_sentence(str1: str)->str:
+    words=str1.split(" ")
+    words=words[::-1]
+    return(" ".join(words))
+    ---------------------------------------
+    
