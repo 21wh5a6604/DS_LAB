@@ -1,0 +1,11 @@
+def is_disarium(n: int)->bool:
+    n1=str(n)
+    i=0
+    a=[]
+    while(i< len(str(n))):
+        p=int(n1[i])*i
+        return p
+        i+=1
+    a=a.append(p)
+    return sum(a)==n
+------------------------------------
