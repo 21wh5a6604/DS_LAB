@@ -1,0 +1,47 @@
+#include<stdio.h>
+int binary_reursive(int arr[],int n,int low,int high,int x)
+{
+    int mid = (low + high)/2;
+    if(low > high)
+    return 0;
+    else if (arr[mid]==x)
+        return mid +1;
+    else if (arr[mid]<x)
+        low = mid +1;
+    else if (arr[mid]>x)
+        high = mid -1;
+    else
+    {
+    return binary_reursive(arr,n,low,high,x);
+    }
+}
+int main()
+{
+    int arr[10],n,x,i,result;
+    printf("enter the total numbers of elements");
+    scanf("%d",&n);
+    printf("enter the array elements");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    printf("enter the search element");
+    scanf("%d",&x);
+    result = binary_reursive(arr,n,0,n-1,x);
+if(result!=0)
+    printf("element found at position %d",result);
+    else
+    printf("element not found in the array");
+}
+output:
+enter the total numbers of elements
+5
+enter the array elements
+5
+10
+15
+20
+30
+enter the search element
+15
+element found at position 3
