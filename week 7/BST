@@ -1,0 +1,227 @@
+ 1 #include<stdio.h>
+  2 #include<stdlib.h>
+  3 
+  4 struct node{
+  5     int data;
+  6     struct node*left;
+  7     struct node*right;
+  8 };
+  9 
+ 10 struct node * root=NULL,*cur,*temp;
+ 11 struct node*create(){
+ 12     cur=(struct node*)malloc(sizeof(struct node));
+ 13     printf("enter element:");
+ 14     scanf("%d",&cur->data);
+ 15     cur->left=NULL;
+ 16     cur->right=NULL;
+ 17     if (root == NULL){
+ 18         root=cur;
+ 19     }
+ 20     else{
+ 21         temp=root;
+ 22         while(temp!=NULL){
+ 23             if(cur->data<temp->data && temp->left==NULL){
+ 24                 temp->left=cur;
+ 25                 return root;
+ 26             }
+ 27             else if (cur->data<temp->data && temp->left!=NULL){
+ 28                 temp=temp->left;
+ 29                 }
+ 30             else if (cur->data>temp->data && temp->right==NULL){
+ 31                 temp->right = cur;
+ 32                 return root;
+ 33                 }
+ 34             else if(cur->data>temp->data && temp->right != NULL){
+ 35                 temp = temp->right;
+ 36                 }
+ 37             }
+                                                                                                                            1,1           Top
+
+ 1 #include<stdio.h>
+  2 #include<stdlib.h>
+  3 
+  4 struct node{
+  5     int data;
+  6     struct node*left;
+  7     struct node*right;
+  8 };
+  9 
+ 10 struct node * root=NULL,*cur,*temp;
+ 11 struct node*create(){
+ 12     cur=(struct node*)malloc(sizeof(struct node));
+ 13     printf("enter element:");
+ 14     scanf("%d",&cur->data);
+ 15     cur->left=NULL;
+ 16     cur->right=NULL;
+ 17     if (root == NULL){
+ 18         root=cur;
+ 19     }
+ 20     else{
+ 21         temp=root;
+ 22         while(temp!=NULL){
+ 23             if(cur->data<temp->data && temp->left==NULL){
+ 24                 temp->left=cur;
+ 25                 return root;
+ 26             }
+ 27             else if (cur->data<temp->data && temp->left!=NULL){
+ 28                 temp=temp->left;
+ 29                 }
+ 30             else if (cur->data>temp->data && temp->right==NULL){
+ 31                 temp->right = cur;
+ 32                 return root;
+ 33                 }
+ 34             else if(cur->data>temp->data && temp->right != NULL){
+ 35                 temp = temp->right;
+ 36                 }
+ 37             }
+  38         }
+ 39 }
+ 40 
+ 41 void preorder(struct node* root){
+ 42     if (root!= NULL){
+ 43         printf("%d",root->data);
+ 44         preorder(root->left);
+ 45         preorder(root->right);
+ 46 }
+ 47 }
+ 48 
+ 49 void inorder(struct node* root){
+ 50     if (root!=NULL){
+ 51         preorder(root->left);
+ 52         printf("%d",root->data);
+ 53         preorder(root->right);
+ 54 }
+ 55 }
+ 56 void postorder(struct node* root){
+ 57     if(root!=NULL){
+ 58         postorder(root->left);
+ 59         postorder(root->right);
+ 60         printf("%d", root->data);
+ 61 }
+ 62 }
+ 63 
+ 64 
+ 65 int main(){
+ 66     int ch;
+ 67     while(1){
+ 68     printf("1: create\n 2: preorder\n 3: inorder\n 4: postorde\n 5: exit\n");
+ 69     printf("enter your choice:");
+ 70     scanf("%d",&ch);
+ 71     switch (ch){
+ 72         case 1 :root= create();
+ 73             break;
+ 74         case 2: preorder(root);                                                                           
+ 74         case 2: preorder(root);
+ 75             break;
+ 76         case 3: inorder(root);
+ 77             break;
+ 78         case 4: postorder(root);
+ 79             break;
+ 80         case 5: exit(0);
+ 81             break;
+ 82 }
+ 83 }
+ 84 
+ 85 }
+
+
+
+
+OUTPUT:
+
+
+
+1: create
+ 2: preorder
+ 3: inorder
+ 4: postorde
+ 5: exit
+enter your choice:1
+enter element:78
+
+1: create
+ 2: preorder
+ 3: inorder
+ 4: postorde
+ 5: exit
+enter your choice:1
+enter element:32
+
+1: create
+ 2: preorder
+ 3: inorder
+ 4: postorde
+ 5: exit
+enter your choice:1
+enter element:60
+
+1: create
+ 2: preorder
+ 3: inorder
+ 4: postorde
+ 5: exit
+enter your choice:1
+enter element:89
+
+1: create
+ 2: preorder
+ 3: inorder
+ 4: postorde
+ 5: exit
+enter your choice:1
+enter element:46
+
+1: create
+ 2: preorder
+ 3: inorder
+ 4: postorde
+ 5: exit
+enter your choice:1
+enter element:98
+
+1: create
+ 2: preorder
+ 3: inorder
+ 4: postorde
+ 5: exit
+enter your choice:1
+enter element:28
+
+1: create
+ 2: preorder
+ 3: inorder
+ 4: postorde
+ 5: exit
+enter your choice:1 
+enter element:53
+
+1: create
+ 2: preorder
+ 3: inorder
+ 4: postorde
+ 5: exit
+enter your choice:2
+7832286046538998
+1: create
+ 2: preorder
+ 3: inorder
+ 4: postorde
+ 5: exit
+enter your choice:3
+3228604653788998
+1: create
+ 2: preorder
+ 3: inorder
+ 4: postorde
+ 5: exit
+enter your choice:4
+2853466032988978
+1: create
+ 2: preorder
+ 3: inorder
+ 4: postorde
+ 5: exit
+enter your choice:5
+
+                                                                                                                          1,1           Top
+
