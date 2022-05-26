@@ -1,0 +1,29 @@
+1 #include<stdio.h>
+  2 #include<fncl.h>
+  3 int main(){
+  4     int pd1[2],pd2[2];
+  5     char  s1="BVRIT" , s2="HYDERABAD" ,S3=[100],S4=[100];
+  6     pipe(pd1);
+  7     pipe(pd2);
+  8     int p=fork();
+  9     if (p>0){
+ 10         close(pd1[0]);
+ 11         write(pd1[1] , s1,strlen(s1));
+ 12         close(pd1[1]);
+ 13         wait(NULL);
+ 14         close(pd2[1]);
+ 15         read(pd2[0],s4,strlen(s4));
+ 16         pf("string2:%s\n",s4);
+ 17         close(pd2[0]);
+ 18 }
+ 19     else if(p==0){
+ 20         close(pd1[1]);
+ 21         read(pd1[0] , s3 , strlen(s3));
+ 22         printf("string1:%s\n",s3);
+ 23         close(pd1[0]);
+ 24         close(pd2[0]);
+ 25         write(pd2[1],s2,strlen(s2));
+ 26         close(pd2[1]);
+ 27         exit(0);
+ 28 }
+~                                                      
