@@ -1,0 +1,52 @@
+#include<stdio.h>
+  2 #include<stdlib.h>
+  3 int full=0,empty=5,mutex=1,x=0;
+  4 int wait(int s){
+  5     s--;
+  6     return(s);
+  7 }
+  8 int signal(int s){
+  9     s++;
+ 10     return(s);
+ 11 }
+ 12 void producer(){
+ 13     mutex = wait(mutex);
+ 14     full=signal(full);
+ 15     empty=wait(empty);
+ 16     x++;
+ 17     printf("producer produces the item %d",x);
+ 18     mutex=signal(mutex);
+ 19 }
+ 20 void consumer(){
+ 21     mutex=wait(mutex);
+ 22     full=wait(full);
+ 23     empty = signal(empty);
+ 24     printf("consumer consumes item %d",x);
+ 25     x--;
+ 26     mutex=signal(mutex);
+ 27 }
+ 28 int main(){
+ 29     int ch;
+ 30     while(1){
+ 31     printf("1:producer\n2:consumer\n3:exit\n enter your choice:");
+ 32     scanf("%d",&ch);
+ 33 
+ 34         switch(ch){
+ 35             case 1: if(mutex==1 && empty!=0){
+34         switch(ch){
+ 35             case 1: if(mutex==1 && empty!=0){
+ 36                         producer();
+ 37                     }
+ 38                     else
+ 39                         printf("buffer is full");
+ 40                     break;
+ 41             case 2: if(mutex  == 1 && full!=0)
+ 42                         consumer();
+ 43                     else
+ 44                         printf("buffer is empty");
+ 45                     break;
+ 46             case 3: exit(0);
+ 47                     break;
+ 48 }
+ 49 }
+ 50 }
