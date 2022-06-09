@@ -1,0 +1,21 @@
+ #include<stdio.h>
+  2 #include<sys/ipc.h>
+  3 #include<sys/msg.h>
+  4 #define MAX 10
+  5 struct mesg_buffer{
+  6     long mesg_type;
+  7     char mesg_text[100];
+  8   }message;
+  9 int main(){
+ 10     key_t key;
+ 11     int msgid;
+ 12     key = ftok("progfile",65);
+ 13     msgid = msgget(key,0666|IPC_CREAT);
+ 14     msgrcv(msgid,&message,sizeof(message),1,0);
+ 15     printf("datareceived is : %s\n",message.mesg_text);
+ 16     msgctl(msgid,IPC_RMID,NULL);
+ 17     return 0;
+ 18 }
+ 19 
+op:
+datareceived is : hello fro
